@@ -55,15 +55,17 @@ Ruby installed on your local machine
 - GitHub: [@ismailcourr](https://twitter.com/ismailcourr)
 - LinkedIn: [Ismail courr](https://www.linkedin.com/in/ismailcourr)
 
-👤 **Akumu Bavon**
+👤 **Oybek Kayumov**
 
-- GitHub: [@Bavon101](https://github.com/Bavon101)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/akumu-bavon-335416193/)
+- GitHub: [@OybekKayumov](https://github.com/OybekKayumov)
+- Twitter: [@KayumovOybek](https://twitter.com/KayumovOybek)
+- LinkedIn: [Oybek Kayumov](https://www.linkedin.com/in/oybek-kayumov/)
 
-👤 **Muneeb Ul Rehman**
+👤 **Ayoub Chahir**
 
-- GitHub: [@muneebulrehman](https://github.com/muneebulrehman)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/muneeb-ul-rehman-33903b159/)
+- GitHub: [@AyoubMS](https://github.com/AyoubMs)
+- Twitter: [@KnowledgeUserD](https://twitter.com/KnowledgeUserD)
+- LinkedIn: [Ayoub Chahir](https://www.linkedin.com/in/ayoub-chahir/)
 
 ## 🤝 Contributing
 
