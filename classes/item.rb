@@ -8,7 +8,7 @@ class Item
   attr_accessor :id, :genre, :author, :label, :publish_date
 
   def can_be_archived?()
-    @publish_date > 10
+    @publish_date > 
   end
 
   def move_to_archive()
