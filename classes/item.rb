@@ -7,7 +7,11 @@ class Item
 
   attr_accessor :id, :genre, :author, :label, :publish_date
 
-  def can_be_archived?; end
+  def can_be_archived?()
+    return @publish_date > 10 ? true : false;
+  end
 
-  def move_to_archive; end
+  def move_to_archive() 
+    can_be_archived?() ? @archived = true;
+  end
 end
