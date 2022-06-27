@@ -9,7 +9,4 @@ class Book < Item
     super(publish_date, id: id, archived: archived)
   end
 
-  def can_be_archived?
-    publish_date > 10
-  end
 end
