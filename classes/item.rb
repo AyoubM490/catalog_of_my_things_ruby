@@ -8,10 +8,10 @@ class Item
   attr_accessor :id, :genre, :author, :label, :publish_date
 
   def can_be_archived?()
-    return @publish_date > 10 ? true : false;
+    @publish_date > 10
   end
 
-  def move_to_archive() 
-    can_be_archived?() ? @archived = true;
+  def move_to_archive()
+    @archived = true if can_be_archived?
   end
 end
