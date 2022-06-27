@@ -2,13 +2,13 @@ class App
   def initialize
     @options = [
       'List all books',
-      'List all music albums',  
+      'List all music albums',
       'List of games',
       'List all genres (e.g "Comedy", "Thriller")',
       'List all labels (e.g. "Gift", "New")',
       'List all authors (e.g. "Stephen King")',
       'Add a book',
-      'Add a music album',  
+      'Add a music album',
       'Add a game',
       'Exit'
     ]
@@ -16,7 +16,7 @@ class App
 
   def run
     @options.each_with_index do |option, index|
-      puts "[#{index + 1}] - #{option}"    
+      puts "[#{index + 1}] - #{option}"
     end
     user_input
   end
@@ -24,7 +24,7 @@ class App
   def user_input
     puts 'Please choose an option [1-10] '
     user_choice = gets.homp.to_i
-    operations(user_choice)    
+    operations(user_choice)
   end
 
   def operations(user_choice)
@@ -38,7 +38,7 @@ class App
     else operations_two(user_choice)
     end
   end
-  
+
   def operations_two(user_choice)
     case user_choice
     when 7 then add_book
@@ -51,5 +51,5 @@ class App
 
   def exit
     p 'Thank you for using this app. Have a good day!'
-  end  
+  end
 end
