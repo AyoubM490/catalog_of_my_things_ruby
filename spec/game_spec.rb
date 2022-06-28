@@ -4,7 +4,8 @@ require_relative '../classes/item'
 describe Game do
   before :each do
     @game = Game.new(true, 2021, 2002, false)
-    @item = Item.new(2002, false)
+    @game2 = Game.new(true, 2000, 2021, false)
+    # @item = Item.new(2002, false)
   end
 
   it 'creates a new instance of Game' do

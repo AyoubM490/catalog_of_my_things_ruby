@@ -4,7 +4,7 @@ require_relative '../classes/item'
 describe Author do
   before :each do
     @author = Author.new('Mary', 'Poppins')
-    @item = Item.new(2002)
+    @item = Item.new(2002, archived: false)
   end
 
   context '#initialize' do
