@@ -4,7 +4,6 @@ require_relative './classes/music_album'
 
 class App
   def initialize
-
     @options = [
       'List all books',
       'List all music albums',
@@ -18,7 +17,7 @@ class App
       'Exit'
     ]
 
-    @musicAlbums = []
+    @music_albums = []
   end
 
   def run
@@ -77,9 +76,9 @@ class App
   end
 
   def list_all_genres
-    p "The genres are : "
+    p 'The genres are : '
     @musicAlbums.each do |album|
-      p "#{album.genre}"
+      p album.genre.to_s
     end
   end
 
@@ -89,7 +88,7 @@ class App
 
   def exit
     p 'Thank you for using this app. Have a good day!'
-    write_data_albums(@musicAlbums)
+    write_data_albums(@music_albums)
     exit(true)
   end
 end
