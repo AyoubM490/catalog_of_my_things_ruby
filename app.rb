@@ -4,7 +4,6 @@ require_relative './classes/music_album'
 
 class App
   def initialize
-
     @options = [
       'List all books',
       'List all music albums',
@@ -18,7 +17,7 @@ class App
       'Exit'
     ]
 
-    @musicAlbums = []
+    @music_albums = []
   end
 
   def run
@@ -64,11 +63,11 @@ class App
     p 'Do you want it to be on spotify?'
     on_spotify = gets.chomp
     music_album = MusicAlbum.new(genre, publish_date, on_spotify)
-    @musicAlbums.push(music_album)
+    @music_albums.push(music_album)
   end
 
   def list_all_music_albums
-    @musicAlbums.each_with_index do |album, index|
+    @music_albums.each_with_index do |album, index|
       p "Album number #{index}"
       p "Album genre : #{album.genre}"
       p "Album's published date : #{album.publish_date}"
@@ -77,9 +76,9 @@ class App
   end
 
   def list_all_genres
-    p "The genres are : "
-    @musicAlbums.each do |album|
-      p "#{album.genre}"
+    p 'The genres are : '
+    @music_albums.each do |album|
+      p album.genre.to_s
     end
   end
 
@@ -89,7 +88,7 @@ class App
 
   def exit
     p 'Thank you for using this app. Have a good day!'
-    write_data_albums(@musicAlbums)
+    write_data_albums(@music_albums)
     exit(true)
   end
 end
