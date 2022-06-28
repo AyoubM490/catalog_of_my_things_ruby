@@ -15,17 +15,15 @@ class Item
     Integer(@publish_date) > 10
   end
 
-  def move_to_archive(musicAlbum)
-    @archives.push(musicAlbum) unless @archives.include?(musicAlbum)
+  def move_to_archive(music_album)
+    @archives.push(music_album) unless @archives.include?(music_album)
   end
 
   def list_music_albums()
     @archives
   end
-  
-  def genre
-    @genre
-  end
+
+  # attr_reader :genre
 
   def list_genres()
     genres = []
