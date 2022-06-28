@@ -1,9 +1,10 @@
-class Item
-  def initialize(genre, publish_date, id: rand(1..2000), archived: true)
+require 'date'
 
+class Item
   attr_accessor :publish_date
   attr_reader :id, :genre, :author, :label, :archived
 
+  def initialize(genre, publish_date, id: rand(1..2000), archived: true)
     @id = id
     @archived = archived
     @genre = genre
@@ -40,7 +41,7 @@ class Item
   # private
 
   def can_be_archived?()
-    publish_date = Date.today.year - @publish_date
+    publish_date = Date.today.year - Integer(@publish_date)
     publish_date > 10
   end
 
