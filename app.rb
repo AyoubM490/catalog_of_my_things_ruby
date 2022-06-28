@@ -23,7 +23,7 @@ class App
 
   def user_input
     puts 'Please choose an option [1-10] '
-    user_choice = gets.homp.to_i
+    user_choice = gets.chomp.to_i
     operations(user_choice)
   end
 
