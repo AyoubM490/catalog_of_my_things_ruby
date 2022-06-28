@@ -7,6 +7,11 @@ class Item
 
   attr_accessor :id, :genre, :author, :label, :publish_date
 
+  def add_author=(author)
+    @author = author
+    author.items.push(self) unless author.items.include?(self)
+  end
+
   def can_be_archived?()
     @publish_date > 10
   end
