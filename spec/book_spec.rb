@@ -11,7 +11,7 @@ describe Book do
       expect(book_one.publisher).to eq('Oraily')
       expect(book_one.publish_date).to eq(2020)
       expect(book_one.cover_state).to eq('papper_back')
-      expect(book_one.archived).to eq(false)
+      expect(book_one.archived).to_not eq(false)
     end
 
     it 'Return the rigth data' do
@@ -19,7 +19,7 @@ describe Book do
       expect(book_two.publish_date).to eq(2008)
       expect(book_two.cover_state).to eq('hard_back')
       expect(book_two.archived).to eq(true)
-      expect(book_two.id).to eq(id)
+      expect(book_two.id).to_not eq(id)
     end
   end
 
