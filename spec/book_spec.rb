@@ -1,9 +1,7 @@
 require_relative '../classes/book'
-# require_relative '../classes/item'
 
 describe Book do
   id = rand(1..2000)
-  # item = Item.new()
   book_one = Book.new('Oraily', 'papper_back', 2020)
   book_two = Book.new('Penguin', 'hard_back', 2008, archived: true, id: id)
   book_three = Book.new('Oraily', 'bad', 2020)
