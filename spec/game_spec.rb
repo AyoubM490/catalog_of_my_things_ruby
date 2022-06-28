@@ -4,7 +4,7 @@ require_relative '../classes/item'
 describe Game do
   before :each do
     @game = Game.new(true, 2021, 2002, false)
-    @game2 = Game.new(true, 2000, 2021, false)
+    @game2 = Game.new(true, 2000, 2021, true)
     # @item = Item.new(2002, false)
   end
 
