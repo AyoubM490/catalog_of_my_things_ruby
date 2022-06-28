@@ -5,9 +5,9 @@ describe MusicAlbum do
   context 'Given an item' do
     it 'returns true if the music album can be archived on spotify' do
       item = Item.new('comedie', '11')
-      musicAlbum = MusicAlbum.new('comedie', '11', true)
+      music_album = MusicAlbum.new('comedie', '11', true)
 
-      expect(musicAlbum.can_be_archived?(item)).to equal(true)
+      expect(music_album.can_be_archived?(item)).to equal(true)
     end
   end
 end
