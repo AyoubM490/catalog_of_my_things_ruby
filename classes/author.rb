@@ -5,6 +5,7 @@ class Author < Item
   attr_accessor :first_name, :last_name, :items
 
   def initialize(first_name, last_name)
+    super()
     @id = Random.rand(1..2000)
     @first_name = first_name
     @last_name = last_name
@@ -13,6 +14,6 @@ class Author < Item
 
   def add_item(item)
     @items.push(item)
-    # item.author = self
+    item.author = self
   end
 end
