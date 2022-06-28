@@ -29,6 +29,11 @@ class Item
     author.add_item(self) unless author.items.include? self
   end
 
+  def add_author=(author)
+    @author = author
+    author.items.push(self) unless author.items.include?(self)
+  end
+
   def can_be_archived?()
     @publish_date > 10
   end
