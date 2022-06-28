@@ -2,9 +2,10 @@ $LOAD_PATH << '.'
 require_relative './item'
 
 class Genre
-  attr_reader :id
+  attr_reader :id, :items, :genres
+
   attr_accessor :name
-  
+
   def initialize(name)
     @id = rand(1..1000)
     @name = name
@@ -12,13 +13,9 @@ class Genre
     @genres = []
   end
 
-  def items
-    @items
-  end
-
   def add_genre(genre)
     @genres.push(genre) unless @genres.include?(genre)
-    genre.item(self)
+    genre.item = self
   end
 
   def add_item(item)
