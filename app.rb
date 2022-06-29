@@ -54,6 +54,6 @@ class App
 
   def exit_app
     p 'Thank you for using this app. Have a good day!'
-    exit()
+    exit
   end
 end

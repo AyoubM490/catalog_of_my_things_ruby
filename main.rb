@@ -3,7 +3,7 @@ require_relative 'app'
 def main
   app = App.new
   loop do
-  app.run
+    app.run
   end
 end
 
