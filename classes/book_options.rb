@@ -44,9 +44,9 @@ def list_all_labels
 end
 
 def write_books_data
-  books = {}
+  books = []
   @books.each do |book|
-    books[book.class] = {
+    b = {
       'first_name' => book.author.first_name,
       'last_name' => book.author.last_name,
       'publisher' => book.publisher,
@@ -54,6 +54,7 @@ def write_books_data
       'title' => book.label.title,
       'cover_state' => book.cover_state
     }
+    books.push(b)
   end
 
   FileUtils.mkdir_p('storage')
@@ -65,7 +66,7 @@ def read_book_data
 
   books = File.read('./storage/books.json')
   books = JSON.parse(books)
-  books.each do |_, prop|
+  books.each do |prop|
     new_book = Book.new(prop['publisher'], prop['cover_state'], prop['publish_date'])
     new_book.author = Author.new(prop['first_name'], prop['last_name'])
     new_book.label = Label.new(prop['title'], prop['color'])
