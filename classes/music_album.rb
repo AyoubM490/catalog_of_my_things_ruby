@@ -14,9 +14,7 @@ class MusicAlbum < Item
     item.can_be_archived? && on_spotify
   end
 
-  def publish_date
-    @publish_date
-  end
+  attr_reader :publish_date
 
   def to_hash
     hash = {}
