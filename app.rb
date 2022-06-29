@@ -5,11 +5,14 @@ require './data_storage'
 require 'fileutils'
 require 'json'
 
+require_relative './classes/games_module'
+
 class App
   def initialize
     @music_albums_storage = DataStorage.new('./storage/albums.json')
 
     @books = []
+    @games = []
     @music_albums = @music_albums_storage.objects_from_array(@music_albums_storage.read_data) || []
     @options = [
       'List all books',
@@ -27,6 +30,7 @@ class App
 
   def run
     read_book_data
+    read_games_data
     loop do
       @options.each_with_index do |option, index|
         puts "[#{index + 1}]- #{option}"
@@ -117,44 +121,7 @@ class App
     p 'Thank you for using this app. Have a good day!'
     write_albums_data
     write_books_data
+    write_games_data
     exit(true)
-  end
-
-  def list_all_authors
-    p 'There are no authors here' if @authors.length.zero?
-    @authors.each_with_index do |author, index|
-      p "[#{index}] - #{author.first_name} #{author.last_name}"
-    end
-    puts
-  end
-
-  def add_game
-    print 'Is this game for multiplayers? [Y/N]'
-    multiplayer = gets.chomp.downcase
-    multiplayer = multiplayer == 'y'
-    print 'Please enter the year this game was last played in [YYYY]: '
-    last_played_at = gets.chomp.to_i
-    print 'Please enter the game published year [YYYY]: '
-    publish_date = gets.chomp.to_i
-    print 'Has the game been archived [Y/N]: '
-    archived = gets.chomp.downcase
-    archived = archived == 'y'
-    puts 'Choose an author from the following list using the number'
-    list_all_authors
-    author_chosen = gets.chomp.to_i
-    game = Game.new(multiplayer, last_played_at, publish_date, archived)
-    game.add_author(@authors[author_chosen])
-    @games << game
-    p 'The game has been added successfully!'
-    puts
-  end
-
-  def list_all_games
-    p 'There are no games here!' if @games.length.zero?
-    @games.each_with_index do |game, index|
-      p "[#{index + 1}] - Multiplayer: #{game.multiplayer},
-      Last Played: #{game.last_played_at}, Archived: #{game.archived}"
-    end
-    puts
   end
 end
