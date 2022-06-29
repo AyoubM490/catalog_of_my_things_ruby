@@ -1,4 +1,7 @@
+$LOAD_PATH << '.'
 require_relative './classes/book_options'
+require_relative 'json_handler'
+require_relative './classes/music_album'
 
 class App
   def initialize
@@ -15,6 +18,8 @@ class App
       'Add a game',
       'Exit'
     ]
+
+    @music_albums = []
   end
 
   def run
@@ -52,8 +57,40 @@ class App
     end
   end
 
+  def add_music_album()
+    p 'Add a genre'
+    genre = gets.chomp
+    p 'Add a publish date'
+    publish_date = gets.chomp
+    p 'Do you want it to be on spotify?'
+    on_spotify = gets.chomp
+    music_album = MusicAlbum.new(genre, publish_date, on_spotify)
+    @musicAlbums.push(music_album)
+  end
+
+  def list_all_music_albums
+    @musicAlbums.each_with_index do |album, index|
+      p "Album number #{index}"
+      p "Album genre : #{album.genre}"
+      p "Album's published date : #{album.publish_date}"
+      p "The album is #{album.on_spotify ? '' : 'not'} on spotify"
+    end
+  end
+
+  def list_all_genres
+    p 'The genres are : '
+    @musicAlbums.each do |album|
+      p album.genre.to_s
+    end
+  end
+
+  def write_data_albums(data)
+    File.write('albums.json', JsonHanler.generate_json(data))
+  end
+
   def exit_app
     p 'Thank you for using this app. Have a good day!'
-    exit
+    write_data_albums(@music_albums)
+    exit(true)
   end
 end
