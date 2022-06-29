@@ -5,10 +5,6 @@ require_relative './label'
 
   # Create a book.
   def add_book
-    print 'Title:  '
-    title = gets.chomp
-    print 'Label color:  '
-    color = gets.chomp
     print 'Author first name:  '
     first_name = gets.chomp
     print 'Author last name:  '
@@ -19,8 +15,12 @@ require_relative './label'
     cover_state = gets.chomp
     print 'Publish Date (Year):  '
     publish_date = gets.chomp
+    print 'Lable (e.g: "gift"):  '
+    label = gets.chomp
+    print 'Label color:  '
+    color = gets.chomp
     author = Author.new(first_name, last_name)
-    label = Label.new(title, color)
+    label = Label.new(label, color)
     new_book = Book.new(publisher, cover_state, publish_date)
     new_book.author = author
     new_book.label = label
@@ -34,6 +34,11 @@ require_relative './label'
   end
 
   def list_all_books
-    @books.each_with_index { |book, index| puts "#{index + 1}) \"#{book.label.title}\" by #{book.author.first_name}, #{book.author.last_name}" }
+    @books.each_with_index { |book, index| puts "#{index + 1}) Fist Name: \"#{book.author.first_name}, Last Name: #{book.author.last_name}, Published by: #{book.publisher} on #{book.publish_date}. Cover: #{book.cover_state} \n" }
+    puts
+  end
+
+def list_all_labels
+    @books.each_with_index { |book, index| print " \"#{book.label.title}\", " }
     puts
   end
