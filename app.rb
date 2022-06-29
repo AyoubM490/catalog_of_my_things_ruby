@@ -23,11 +23,11 @@ class App
   def run
     read_book_data
     loop do
-    @options.each_with_index do |option, index|
-      puts "[#{index + 1}]- #{option}"
+      @options.each_with_index do |option, index|
+        puts "[#{index + 1}]- #{option}"
+      end
+      user_input
     end
-    user_input
-  end
   end
 
   def user_input
