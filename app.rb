@@ -2,7 +2,6 @@ require 'json'
 require_relative './classes/author'
 require_relative './classes/game'
 
-
 class App
   def initialize
     @options = [
@@ -32,7 +31,6 @@ class App
       @authors << Author.new(first_name, last_name)
     end
   end
-  
 
   def run
     @options.each_with_index do |option, index|
