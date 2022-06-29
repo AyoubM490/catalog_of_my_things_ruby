@@ -85,7 +85,7 @@ class App
   end
 
   def write_data_albums(data)
-    File.write('albums.json', JsonHanler.generate_json(data))
+    File.write('albums.json', JsonHandler.generate_json(data))
   end
 
   def exit_app
