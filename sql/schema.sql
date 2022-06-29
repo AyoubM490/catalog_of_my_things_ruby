@@ -13,3 +13,19 @@ CREATE TABLE game (
   multiplayer BOOLEAN NOT NULL,  
   last_played_at DATE NOT NULL 
 );
+
+-- Create Books table
+CREATE TABLE books (
+  id INT NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  publisher VARCHAR(200) NOT NULL,
+  cover_state VARCHAR(200) NOT NULL,  
+  publish_date DATE NOT NULL,
+  archived BOOLEAN NOT NULL
+);
+
+-- Create labels table
+CREATE TABLE labels (
+  id INT NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  title VARCHAR(200) NOT NULL,
+  color VARCHAR(200) NOT NULL
+);
