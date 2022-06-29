@@ -36,14 +36,9 @@ class App
     operations(user_choice)
   end
 
-  def llal
-    # read_book_data
-    list_all_books
-  end
-
   def operations(user_choice)
     case user_choice
-    when 1 then llal
+    when 1 then list_all_books
     when 2 then list_all_music_albums
     when 3 then list_all_games
     when 4 then list_all_genres

@@ -51,6 +51,7 @@ def write_books_data
       'last_name' => book.author.last_name,
       'publisher' => book.publisher,
       'publish_date' => book.publish_date,
+      'title' => book.label.title,
       'cover_state' => book.cover_state
     }
   end
@@ -63,12 +64,11 @@ def read_book_data
   if File.exist?('./storage/books.json')
     books = File.read('./storage/books.json')
     books = JSON.parse(books)
-  end
   books.each do |_, prop|
     new_book = Book.new(prop['publisher'], prop['cover_state'], prop['publish_date'])
     new_book.author = Author.new(prop['first_name'], prop['last_name'])
-    new_book.label = Label.new(prop['cover_state'], prop['color'])
+    new_book.label = Label.new(prop['title'], prop['color'])
     @books.push(new_book)
   end
-  puts 'Exetcuted'
+end
 end
