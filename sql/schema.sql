@@ -11,6 +11,5 @@ CREATE TABLE game (
   publish_date DATE,
   archived BOOLEAN,
   multiplayer BOOLEAN,  
-  last_played_at DATE,  
-  FOREIGN KEY (id) REFERENCES item (id) ON DELETE CASCADE  
+  last_played_at DATE  
 );
