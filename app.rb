@@ -1,9 +1,11 @@
 $LOAD_PATH << '.'
+require_relative './classes/book_options'
 require_relative 'json_handler'
 require_relative './classes/music_album'
 
 class App
   def initialize
+    @books = []
     @options = [
       'List all books',
       'List all music albums',
@@ -48,7 +50,7 @@ class App
     when 7 then add_book
     when 8 then add_music_album
     when 9 then add_game
-    when 10 then exit
+    when 10 then exit_app
     else p 'Please choose a number between 1-10'
     end
   end
@@ -81,10 +83,10 @@ class App
   end
 
   def write_data_albums(data)
-    File.write('albums.json', JsonHanler.generate_json(data))
+    File.write('albums.json', JsonHandler.generate_json(data))
   end
 
-  def exit
+  def exit_app
     p 'Thank you for using this app. Have a good day!'
     write_data_albums(@music_albums)
     exit(true)
