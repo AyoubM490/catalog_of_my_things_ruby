@@ -21,10 +21,13 @@ class App
   end
 
   def run
+    read_book_data
+    loop do
     @options.each_with_index do |option, index|
       puts "[#{index + 1}]- #{option}"
     end
     user_input
+  end
   end
 
   def user_input
@@ -33,9 +36,14 @@ class App
     operations(user_choice)
   end
 
+  def llal
+    # read_book_data
+    list_all_books
+  end
+
   def operations(user_choice)
     case user_choice
-    when 1 then list_all_books
+    when 1 then llal
     when 2 then list_all_music_albums
     when 3 then list_all_games
     when 4 then list_all_genres
@@ -89,6 +97,7 @@ class App
   def exit_app
     p 'Thank you for using this app. Have a good day!'
     write_data_albums(@music_albums)
+    write_books_data
     exit(true)
   end
 
