@@ -24,10 +24,13 @@ class App
   end
 
   def run
-    @options.each_with_index do |option, index|
-      puts "[#{index + 1}]- #{option}"
+    read_book_data
+    loop do
+      @options.each_with_index do |option, index|
+        puts "[#{index + 1}]- #{option}"
+      end
+      user_input
     end
-    user_input
   end
 
   def user_input
@@ -92,6 +95,7 @@ class App
   def exit_app
     p 'Thank you for using this app. Have a good day!'
     write_data_albums(@music_albums)
+    write_books_data
     exit(true)
   end
 end
