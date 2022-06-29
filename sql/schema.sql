@@ -8,8 +8,8 @@ CREATE TABLE author (
 -- create games table
 CREATE TABLE game (
   id INT NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  publish_date DATE,
-  archived BOOLEAN,
-  multiplayer BOOLEAN,  
-  last_played_at DATE  
+  publish_date DATE NOT NULL,
+  archived BOOLEAN NOT NULL,
+  multiplayer BOOLEAN NOT NULL,  
+  last_played_at DATE NOT NULL 
 );
