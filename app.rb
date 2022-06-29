@@ -3,12 +3,12 @@ require_relative './classes/book_options'
 require_relative 'json_handler'
 require_relative './classes/music_album'
 
-require_relative './modules/author_module'
-require_relative './modules/games_module'
+require_relative './classes/games_module'
 
 class App
   def initialize
     @books = []
+    @games = []
     @options = [
       'List all books',
       'List all music albums',
