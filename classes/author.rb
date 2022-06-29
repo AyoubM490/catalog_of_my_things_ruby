@@ -5,7 +5,7 @@ class Author < Item
   attr_accessor :first_name, :last_name, :items
 
   def initialize(first_name, last_name)
-    super(publish_date, archived: archived)
+    super(publish_date)
     @id = Random.rand(1..2000)
     @first_name = first_name
     @last_name = last_name

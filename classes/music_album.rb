@@ -3,8 +3,8 @@ require_relative 'item'
 class MusicAlbum < Item
   attr_accessor :on_spotify
 
-  def initialize(publish_date, on_spotify, id: rand(1..2000), archived: true)
-    super(publish_date, id: id, archived: archived)
+  def initialize(publish_date, on_spotify)
+    super(publish_date)
     @on_spotify = on_spotify
   end
 
@@ -14,18 +14,16 @@ class MusicAlbum < Item
     item.can_be_archived? && on_spotify
   end
 
+  attr_reader :publish_date
+
   def to_hash
     hash = {}
-    hash[:class] = self.class
-    hash[:genre] = @genre
     hash[:publish_date] = @publish_date
-    hash[:id] = @id
-    hash[:archived] = @archived
     hash[:on_spotify] = @on_spotify
     hash
   end
 
   def self.create_from_hash(hash)
-    MusicAlbum.new(hash['genre'], hash['publish_date'], hash['on_spotify'], hash['id'], hash['archived'])
+    MusicAlbum.new(hash['publish_date'], hash['on_spotify'])
   end
 end
