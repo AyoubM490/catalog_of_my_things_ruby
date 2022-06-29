@@ -4,9 +4,9 @@ class Item
   attr_accessor :publish_date
   attr_reader :id, :genre, :author, :label, :archived
 
-  def initialize(publish_date, id: rand(1..2000), archived: true)
-    @id = id
-    @archived = archived
+  def initialize(publish_date)
+    @id = rand(1..2000)
+    @archived = true
     @publish_date = publish_date
   end
 
@@ -43,5 +43,9 @@ class Item
 
   def move_to_archive()
     @archived = true if can_be_archived?
+  end
+
+  def publish_date
+    @publish_date
   end
 end
