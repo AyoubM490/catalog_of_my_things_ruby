@@ -38,3 +38,33 @@ def list_all_authors
   end
   puts
 end
+
+def write_games_data
+  games = []
+  @games.each do |game|
+    g = {
+      'first_name' => game.author.first_name,
+      'last_name' => game.author.last_name,
+      'multiplayer' => game.multiplayer,
+      'last_played_at' => game.last_played_at,
+      'publish_date' => game.publish_date,
+      'archived' => game.archived
+    }
+    games.push(g)
+  end
+
+  FileUtils.mkdir_p('storage')
+  File.write('./storage/games.json', JSON.generate(games), mode: 'w')
+end
+
+def read_games_data
+  return unless File.exist?('./storage/games.json')
+
+  games = File.read('./storage/games.json')
+  games = JSON.parse(games)
+  games.each do |prop|
+    new_game = Game.new(prop['multiplayer'], prop['last_played_at'], prop['publish_date'], prop['archived'])
+    new_game.author = Author.new(prop['first_name'], prop['last_name'])
+    @games.push(new_game)
+  end
+end

@@ -30,6 +30,7 @@ class App
 
   def run
     read_book_data
+    read_games_data
     loop do
       @options.each_with_index do |option, index|
         puts "[#{index + 1}]- #{option}"
@@ -120,6 +121,7 @@ class App
     p 'Thank you for using this app. Have a good day!'
     write_albums_data
     write_books_data
+    write_games_data
     exit(true)
   end
 end
