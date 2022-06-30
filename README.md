@@ -13,6 +13,10 @@ The data is stored in JSON files and database with tables structure analogical t
 
 - Ruby
 
+## Documentation
+
+[Video Presentation](https://drive.google.com/file/d/1pUWurO84z48mCIjx1PZxwTtTGiir1_vl/view?usp=sharing)
+
 ## Getting Started
 
 To start using this software you need to have Ruby installed in your machine
