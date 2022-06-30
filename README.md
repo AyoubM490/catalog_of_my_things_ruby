@@ -15,7 +15,7 @@ The data is stored in JSON files and database with tables structure analogical t
 
 ## Documentation
 
-[Video Presentation](https://drive.google.com/file/d/1pUWurO84z48mCIjx1PZxwTtTGiir1_vl/view?usp=sharing)
+[Video Presentation](https://drive.google.com/file/d/1T13wXxjOLTnbhLTim1QXuXUGSqW8oyvX/view?usp=sharing)
 
 ## Getting Started
 
