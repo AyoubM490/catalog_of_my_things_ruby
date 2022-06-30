@@ -31,15 +31,15 @@ CREATE TABLE labels (
 );
 
 -- Create music_albums table
-create table music_albums(
-  id serial not null primary key,
-  archived boolean,
-  publish_date date,
-  on_spotify boolean
+CREATE TABLE music_albums(
+  id SERIAL NOT NULL PRIMARY KEY,
+  archived BOOLEAN,
+  publish_date DATE,
+  on_spotify BOOLEAN
 );
 
 -- Create genres table
-create table genres(
-  id serial not null primary key,
-  name varchar(100)
+CREATE TABLE genres(
+  id SERIAL NOT NULL PRIMARY KEY,
+  name VARCHAR(100)
 );
